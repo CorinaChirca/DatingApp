@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
@@ -8,7 +9,8 @@ import { User } from '../_models/user';
   providedIn: 'root'
 })
 export class AccountService {
-  baseUrl = 'http://localhost:5000/api/';
+  //apiUrl variabila declarata in environment.ts, si in environment.prod.ts declar apiUrl: 'api/'
+  baseUrl = environment.apiUrl;
   //ReplaySubjecte un fel de buffer, se pastreaza valorile, (1) e lungimea bufferului(cate valori se retin)
   private currentUserSource = new ReplaySubject<User>(1);
   //deoarece va fi un observable adaugam $

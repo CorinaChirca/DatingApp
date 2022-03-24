@@ -12,7 +12,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [Authorize]
     public class UsersController : BaseApiController
     {
         private readonly IUserRepository _userRepository;
@@ -25,6 +24,7 @@ namespace API.Controllers
 
         //returnez toti userii(deci o lista)
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
         {
             ////return await _context.Users.ToListAsync();
@@ -40,6 +40,7 @@ namespace API.Controllers
         // api/users/3
         //returnez doar un user
         [HttpGet("{id}")]
+        [Authorize]
         //[HttpGet("{username}")]
         public async Task<ActionResult<MemberDto>> GetUser(int id)
         {
