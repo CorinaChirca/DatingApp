@@ -23,10 +23,10 @@ export class NavComponent implements OnInit {
   login(){
     this.accountService.login(this.model).subscribe(response => {
       this.router.navigateByUrl('/members');  //daca vreau sa navighez spre alte pagini cand sunt logat
-    }, error => {
+    }/*, error => {
       console.log(error);
-      this.toastr.error(error.error);
-    })
+      this.toastr.error(error.error);}*/
+    )
   }
 
   logout(){
