@@ -39,15 +39,15 @@ namespace API.Controllers
 
         // api/users/3
         //returnez doar un user
-        [HttpGet("{id}")]
+        [HttpGet("{username}")]
         [Authorize]
         //[HttpGet("{username}")]
-        public async Task<ActionResult<MemberDto>> GetUser(int id)
+        public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
             //var user = await _userRepository.GetUserByIdAsync(id);
             //return _mapper.Map<MemberDto>(user);
 
-            return await _userRepository.GetMemberAsync(id);
+            return await _userRepository.GetMemberAsync(username);
             //return await _userRepository.GetUserByUsernameAsync(username);  -- in functie declar string username
         }
     }

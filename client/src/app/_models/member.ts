@@ -1,6 +1,7 @@
 import { Photo } from "./photo";
 
 export interface Member {
+    //aceleasi denumiri ca in Dto
     id: number;
     username: string;
     photoUrl: string;

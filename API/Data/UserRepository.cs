@@ -20,10 +20,11 @@ namespace API.Data
             _context = context;
         }
 
-        public async Task<MemberDto> GetMemberAsync(int id)
+        public async Task<MemberDto> GetMemberAsync(string username)
         {
             return await _context.Users
-                .Where(x => x.Id == id)
+                .Where(x => x.UserName == username)
+                //pentru a returna toate campurile din Users(echivalentul lui select)
                 .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
                 .SingleOrDefaultAsync();
         }

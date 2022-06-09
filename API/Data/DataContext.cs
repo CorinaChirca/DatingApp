@@ -5,7 +5,7 @@ namespace API.Data
 {
     public class DataContext : DbContext
     {
-        //costructor
+        //constructor
         public DataContext(DbContextOptions options) : base(options)
         {
         }

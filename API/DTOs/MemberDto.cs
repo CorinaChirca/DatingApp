@@ -5,6 +5,7 @@ namespace API.DTOs
 {
     public class MemberDto
     {
+        //NU TREBUIE SA AVEM TOATE PROPRIETATILE DIN AppUser, ci doar ce vrem sa se vada cand fac select(ProjectTo)
         public int Id { get; set; }
         public string Username { get; set; }
         public string PhotoUrl { get; set; }
